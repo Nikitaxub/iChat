@@ -1,8 +1,9 @@
 //
 //  SceneDelegate.swift
-//  iChat
+//  IChat
 //
-//  Created by nik on 08.02.2024.
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -17,8 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = AuthViewController()
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
     }
 
@@ -26,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

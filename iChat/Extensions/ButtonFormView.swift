@@ -1,8 +1,9 @@
 //
 //  ButtonFormView.swift
-//  iChat
+//  IChat
 //
-//  Created by nik on 13.02.2024.
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -16,21 +17,22 @@ class ButtonFormView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(label)
-        addSubview(button)
+        self.addSubview(label)
+        self.addSubview(button)
         
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor),
-            label.leadingAnchor.constraint(equalTo: leadingAnchor)
+            label.topAnchor.constraint(equalTo: self.topAnchor),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
-            button.leadingAnchor.constraint(equalTo: leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor),
-            button.heightAnchor.constraint(equalToConstant: 60),
-            bottomAnchor.constraint(equalTo: button.bottomAnchor)
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            button.heightAnchor.constraint(equalToConstant: 60)
         ])
+        
+        bottomAnchor.constraint(equalTo: button.bottomAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

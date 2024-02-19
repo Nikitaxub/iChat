@@ -1,19 +1,21 @@
 //
 //  AppDelegate.swift
-//  iChat
+//  IChat
 //
-//  Created by nik on 08.02.2024.
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
